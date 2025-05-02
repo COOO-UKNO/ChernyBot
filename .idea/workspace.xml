@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3ca92c-b694-4b9f-b075-128945ecd78a" name="Changes" comment="">
+    <list default="true" id="af3ca92c-b694-4b9f-b075-128945ecd78a" name="Changes" comment="бот работает.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,5 +71,10 @@
       <workItem from="1746181302061" duration="30000" />
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Revert &quot;bot first version&quot;&#10;&#10;This reverts commit 3f5869990ea397fecce0356fa7c2a1c939fd788f." />
+    <MESSAGE value="бот работает." />
+    <option name="LAST_COMMIT_MESSAGE" value="бот работает." />
   </component>
 </project>
