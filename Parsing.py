@@ -13,9 +13,10 @@ def voz(button_zavod):
             photo= df.iloc[fir, 3].split(";")
             for i in range(len(photo)):
                 st3 += "photos/" +  photo[i]+";"
-            otv = [df.iloc[fir, 1],df.iloc[fir, 2],[st3.split(";")]]
+            otv = [df.iloc[fir, 1],df.iloc[fir, 2],st3.split(";")]
             break
     return(otv)
+
 
 
 
