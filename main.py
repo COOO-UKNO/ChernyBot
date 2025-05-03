@@ -8,7 +8,7 @@ BOT_TOKEN = "7245269020:AAG1BQPGx3Am0BUc4Xiyzihr-DpmqPo0CkA"
 
 start_keyboard = [
         [InlineKeyboardButton(str(parsing.voz("btn_hangout")[0]), callback_data="walking")],
-        [InlineKeyboardButton(str(parsing.voz_ivent("btn_hangout")[0]), callback_data="ivents")],
+        [InlineKeyboardButton("asdasdass", callback_data="ivents")],
         [InlineKeyboardButton(str(parsing.voz("btn_rez")[0]), callback_data="residents")]
     ]
 residents_keyboard = [
@@ -55,7 +55,7 @@ place4_keyboard = [
             [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back_zone")]
         ]
 ivents_keyboard = [
-            [InlineKeyboardButton("Все события", callback_data="all_ivents")],
+            [InlineKeyboardButton("Все события", callback_data="all_events")],
             [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back")]
         ]
 
