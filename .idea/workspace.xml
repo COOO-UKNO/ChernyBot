@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3ca92c-b694-4b9f-b075-128945ecd78a" name="Changes" comment="бот работает.">
-      <change afterPath="$PROJECT_DIR$/photo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/1x1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/cerkov.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/domiki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/ivan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/kaplya.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/lodka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/maria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/nalichniki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/navsegda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/placeholder.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

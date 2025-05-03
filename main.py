@@ -3,12 +3,12 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 import parsing
 
 BOT_TOKEN = "7245269020:AAG1BQPGx3Am0BUc4Xiyzihr-DpmqPo0CkA"
-
+zatychka = 'photos/map.jpg'
 
 
 start_keyboard = [
         [InlineKeyboardButton(str(parsing.voz("btn_hangout")[0]), callback_data="walking")],
-        [InlineKeyboardButton("asdasdass", callback_data="ivents")],
+#       [InlineKeyboardButton("asdasdass", callback_data="ivents")],
         [InlineKeyboardButton(str(parsing.voz("btn_rez")[0]), callback_data="residents")]
     ]
 residents_keyboard = [
@@ -88,7 +88,7 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "start" or query.data == "back":
         new_keyboard = start_keyboard
-        with open('photos/1x1.png', 'rb') as photo_file:
+        with open(zatychka, 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,
                 caption="Главное меню"  # Текст из вашего кода
@@ -99,7 +99,7 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "walking" or query.data == "back_zone":
         new_keyboard = zone_keyboard
-        with open('photos/1x1.png', 'rb') as photo_file:
+        with open(zatychka, 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,
                 caption="Зоны"  # Текст из вашего кода
@@ -110,10 +110,10 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "zone1" or query.data == "back_zone1":
         new_keyboard = place1_keyboard
-        with open('photos/1x1.png','rb') as photo_file:
+        with open(zatychka,'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,
-                caption="Зона 1"  # Текст из вашего кода
+                caption="Зона \"Гора\""  # Текст из вашего кода
         )
         await query.edit_message_media(
             media=media,
@@ -121,30 +121,30 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "zone2" or query.data == "back_zone2":
         new_keyboard = place2_keyboard
-        with open('photos/1x1.png', 'rb') as photo_file:
+        with open(zatychka, 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,
-                caption="Зона 2"  # Текст из вашего кода
+                caption="Зона \"Вода\""  # Текст из вашего кода
             )
         await query.edit_message_media(
             media=media,
             reply_markup=InlineKeyboardMarkup(new_keyboard))
     if query.data == "zone3" or query.data == "back_zone3":
         new_keyboard = place3_keyboard
-        with open('photos/1x1.png', 'rb') as photo_file:
+        with open(zatychka, 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,
-                caption="Зона 3"  # Текст из вашего кода
+                caption="Зона \"Малая сцена\""  # Текст из вашего кода
             )
         await query.edit_message_media(
             media=media,
             reply_markup=InlineKeyboardMarkup(new_keyboard))
     if query.data == "zone4" or query.data == "back_zone4":
         new_keyboard = place4_keyboard
-        with open('photos/1x1.png', 'rb') as photo_file:
+        with open(zatychka, 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,
-                caption="Зона 4"  # Текст из вашего кода
+                caption="Зона \"Большая сцена\""  # Текст из вашего кода
             )
         await query.edit_message_media(
             media=media,
@@ -160,7 +160,7 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "residents" or query.data == "back_rez":
         new_keyboard = residents_keyboard
-        with open('photos/1x1.png', 'rb') as photo_file:
+        with open(zatychka, 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,  # URL изображения или file_id
                 caption=str(parsing.voz("btn_rez")[1])  # Текст из вашего кода
@@ -328,7 +328,7 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         with open(str(parsing.voz("btn_yrok")[2][0]), 'rb') as photo_file:
             media = InputMediaPhoto(
                 media=photo_file,  # URL изображения или file_id
-                caption=str(parsing.voz("btn_nal")[1])  # Текст из вашего кода
+                caption=str(parsing.voz("btn_yrok")[1])  # Текст из вашего кода
             )
         await query.edit_message_media(
             media=media,
