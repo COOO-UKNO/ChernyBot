@@ -1,10 +1,12 @@
+from threading import Thread
+
+import asyncio
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 import parsing
+import editTable
 
 BOT_TOKEN = "7245269020:AAG1BQPGx3Am0BUc4Xiyzihr-DpmqPo0CkA"
-
-
 
 start_keyboard = [
         [InlineKeyboardButton(str(parsing.voz("btn_hangout")[0]), callback_data="walking")],
@@ -330,14 +332,17 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 
-
-
-
-def main():
+def bot_polling():
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(handle_button))
-    app.run_polling()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(app.run_polling())
+
+def main():
+    Thread(target=bot_polling).start()
+    editTable.start()
 
 if __name__ == "__main__":
     main()

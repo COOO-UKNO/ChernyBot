@@ -9,7 +9,7 @@ app = Flask(__name__)
 XLSX_PATH = './data.xlsx'
 
 USERNAME = 'admin'
-PASSWORD = '1234'
+PASSWORD = 'сhernobinsk'
 
 def check_auth(auth_header):
     if not auth_header or not auth_header.startswith("Basic "):
@@ -58,5 +58,5 @@ def static_files(path):
     return send_from_directory("static", path)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+def start():
+    app.run(port=8000)

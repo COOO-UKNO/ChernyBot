@@ -144,11 +144,10 @@
     async function initializeTable() {
         const tabledata = await fetchData();
 
-
         const columns = [
             {formatter: "rownum", title: "#", hozAlign: "center", width: 50},
             {title: "Техническое имя кнопки", field: "tech_button_name"},
-            {title: "Имя кнопки", field: "button name"},
+            {title: "Имя кнопки", field: "button_name"},
             {title: "Описание", field: "description"},
             {title: "Имя изображения", field: "image_name"}
         ];
@@ -176,13 +175,19 @@
 
     async function save() {
         const data = window.table.getData();
+        const orderedData = data.map(row => ({
+            tech_button_name: row.tech_button_name || "",
+            button_name: row.button_name || "",
+            description: row.description || "",
+            image_name: row.image_name || ""
+        }));
         const response = await fetch("/data", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": "Basic " + btoa("admin:1234")
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(orderedData)
         });
 
         if (response.ok) {
