@@ -1,18 +1,19 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
+import parsing
 
 BOT_TOKEN = "7245269020:AAG1BQPGx3Am0BUc4Xiyzihr-DpmqPo0CkA"
 
 start_keyboard = [
-        [InlineKeyboardButton("Начать прогулку", callback_data="walking")],
-        [InlineKeyboardButton("События", callback_data="ivents")]
+        [InlineKeyboardButton(str(parsing.voz("btn_hangout")[0]), callback_data="walking")],
+        [InlineKeyboardButton("sadad", callback_data="ivents")]
     ]
 zone_keyboard = [
-            [InlineKeyboardButton("Зона 1", callback_data="zone1")],
-            [InlineKeyboardButton("Зона 2", callback_data="zone2")],
-            [InlineKeyboardButton("Зона 3", callback_data="zone3")],
-            [InlineKeyboardButton("Зона 4", callback_data="zone4")],
-            [InlineKeyboardButton("Назад", callback_data="back")]
+            [InlineKeyboardButton(str(parsing.voz("btn_zonaMountain")[0]), callback_data="zone1")],
+            [InlineKeyboardButton(str(parsing.voz("btn_zoneWhater")[0]), callback_data="zone2")],
+            [InlineKeyboardButton(str(parsing.voz("btn_zoneSmallScene")[0]), callback_data="zone3")],
+            [InlineKeyboardButton(str(parsing.voz("btn_zoneBigScene")[0]), callback_data="zone4")],
+            [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back")]
         ]
 place1_keyboard = [
             [InlineKeyboardButton("Место 1", callback_data="place11")],

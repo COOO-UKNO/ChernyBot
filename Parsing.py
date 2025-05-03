@@ -17,7 +17,6 @@ def voz(button_zavod):
             break
     return(otv)
 
-print(voz("btn_smotr"))
 
 
     # Получение значения из ячейки A1 (первая строка, первый столбец)
