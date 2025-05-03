@@ -3,9 +3,11 @@ import pandas as pd
 df = pd.read_excel('data.xlsx', sheet_name=0)
 
 
+
+
 def voz(button_zavod):
     st3 = ""
-    otv = []
+    otv=[]
     for fir in range(0,100):
         value = df.iloc[fir, 0]
         if value == button_zavod:
