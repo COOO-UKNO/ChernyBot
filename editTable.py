@@ -9,7 +9,7 @@ app = Flask(__name__)
 XLSX_PATH = './data.xlsx'
 
 USERNAME = 'admin'
-PASSWORD = 'сhernobinsk'
+PASSWORD = '1234'
 
 def check_auth(auth_header):
     if not auth_header or not auth_header.startswith("Basic "):
