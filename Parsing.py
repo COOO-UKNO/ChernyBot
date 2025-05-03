@@ -6,14 +6,18 @@ df = pd.read_excel('data.xlsx', sheet_name=0)
 otv=[]
 
 def voz(button_zavod):
-    for fir in range(0,10):
+    st3 = ""
+    for fir in range(0,30):
         value = df.iloc[fir, 0]
         if value == button_zavod:
-            otv = [df.iloc[fir, 1],df.iloc[fir, 2],f"photos//{[df.iloc[fir, 3]]}//"]
+            photo= df.iloc[fir, 3].split(";")
+            for i in range(len(photo)):
+                st3 += "photos/" +  photo[i]+";"
+            otv = [df.iloc[fir, 1],df.iloc[fir, 2],[st3.split(";")]]
             break
     return(otv)
 
-
+print(voz("btn_smotr"))
 
 
     # Получение значения из ячейки A1 (первая строка, первый столбец)
