@@ -8,7 +8,7 @@ BOT_TOKEN = "7245269020:AAG1BQPGx3Am0BUc4Xiyzihr-DpmqPo0CkA"
 
 start_keyboard = [
         [InlineKeyboardButton(str(parsing.voz("btn_hangout")[0]), callback_data="walking")],
-        [InlineKeyboardButton("sadad", callback_data="ivents")],
+        [InlineKeyboardButton(str(parsing.voz_ivent("btn_hangout")[0]), callback_data="ivents")],
         [InlineKeyboardButton(str(parsing.voz("btn_rez")[0]), callback_data="residents")]
     ]
 residents_keyboard = [
@@ -55,27 +55,30 @@ place4_keyboard = [
             [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back_zone")]
         ]
 ivents_keyboard = [
-            [InlineKeyboardButton("Рассписание мастерских", callback_data="masterclass")],
-            [InlineKeyboardButton("Ближайшие события", callback_data="fast_ivents")],
-            [InlineKeyboardButton("Назад", callback_data="back")]
+            [InlineKeyboardButton("Все события", callback_data="all_ivents")],
+            [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back")]
         ]
-masterclass_keyboard = [
-            [InlineKeyboardButton("МК 2", callback_data="mk1")],
-            [InlineKeyboardButton("МК 1", callback_data="mk2")],
-            [InlineKeyboardButton("МК 3", callback_data="mk3")],
-            [InlineKeyboardButton("Назад", callback_data="back_ivents")]
-        ]
-fast_ivents_keyboard = [
-            [InlineKeyboardButton("Событие 1", callback_data="ivent1")],
-            [InlineKeyboardButton("Событие 2", callback_data="ivent2")],
-            [InlineKeyboardButton("Событие 3", callback_data="ivent3")],
-            [InlineKeyboardButton("Назад", callback_data="back_ivents")]
-        ]
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[InlineKeyboardButton(str(parsing.voz("btn_start")[0]), callback_data="start")]]
+    await update.message.reply_photo(
+        photo=str(parsing.voz("btn_zavod")[2][0]),
+            )
     await update.message.reply_text(
-        text="Найди меня ищи ищи",
+        text=str(parsing.voz("btn_zavod")[1])
+    )
+    await update.message.reply_photo(
+        photo=str(parsing.voz("btn_vesh")[2][0])
+    )
+    await update.message.reply_text(
+        text=str(parsing.voz("btn_vesh")[1])
+    )
+    await update.message.reply_photo(
+        photo=str(parsing.voz("btn_nav")[2][0])
+    )
+    await update.message.reply_text(
+        text=str(parsing.voz("btn_nav")[1]),
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
@@ -128,18 +131,7 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text="События",
             reply_markup=InlineKeyboardMarkup(new_keyboard)
         )
-    if query.data == "masterclass":
-        new_keyboard = masterclass_keyboard
-        await query.edit_message_text(
-            text="Мастеркласс",
-            reply_markup=InlineKeyboardMarkup(new_keyboard)
-        )
-    if query.data == "fast_ivents":
-        new_keyboard = fast_ivents_keyboard
-        await query.edit_message_text(
-            text="Ближайшие события",
-            reply_markup=InlineKeyboardMarkup(new_keyboard)
-        )
+
 
     if query.data == "residents":
         new_keyboard = residents_keyboard

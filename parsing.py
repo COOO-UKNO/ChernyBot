@@ -1,7 +1,7 @@
 import pandas as pd
 
 df = pd.read_excel('data.xlsx', sheet_name=0)
-
+dfi = pd.read_excel('ivents.xlsx', sheet_name=0)
 
 
 
@@ -17,6 +17,19 @@ def voz(button_zavod):
             otv = [df.iloc[fir, 1],df.iloc[fir, 2],st3.split(";")]
             break
     return(otv)
+
+def ivent_voz(button_zavod):
+    st3 = ""
+    otv_ivent = []
+    for fir in range(0, 100):
+        value = df.iloc[fir, 0]
+        if value == button_zavod:
+            photo = df.iloc[fir, 3].split(";")
+            for i in range(len(photo)):
+                st3 += "photos/" + photo[i] + ";"
+            otv_ivent = [df.iloc[fir, 1], df.iloc[fir, 2], st3.split(";")]
+            break
+    return (otv_ivent)
 
 
 
