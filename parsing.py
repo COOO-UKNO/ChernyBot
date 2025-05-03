@@ -3,11 +3,12 @@ import pandas as pd
 df = pd.read_excel('data.xlsx', sheet_name=0)
 
 
-otv=[]
+
 
 def voz(button_zavod):
     st3 = ""
-    for fir in range(0,30):
+    otv=[]
+    for fir in range(0,100):
         value = df.iloc[fir, 0]
         if value == button_zavod:
             photo= df.iloc[fir, 3].split(";")
