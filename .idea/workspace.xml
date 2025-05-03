@@ -7,6 +7,7 @@
     <list default="true" id="af3ca92c-b694-4b9f-b075-128945ecd78a" name="Changes" comment="бот работает.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
