@@ -7,14 +7,15 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 import parsing
 import editTable
 
-BOT_TOKEN = "7245269020:AAG1BQPGx3Am0BUc4Xiyzihr-DpmqPo0CkA"
+BOT_TOKEN = "7926669360:AAEBBu1id8DTbtNs9j3QjGNAKC6r4GayhI4"
 zatychka = 'photos/map.jpg'
 
 
 start_keyboard = [
         [InlineKeyboardButton(str(parsing.voz("btn_hangout")[0]), callback_data="walking")],
-#       [InlineKeyboardButton("asdasdass", callback_data="ivents")],
-        [InlineKeyboardButton(str(parsing.voz("btn_rez")[0]), callback_data="residents")]
+        [InlineKeyboardButton("Программа выходного дня", url="https://blackweekend.yonote.ru/share/b2a7bec2-3738-4f95-bb62-d96f980d43bb")],
+        [InlineKeyboardButton(str(parsing.voz("btn_rez")[0]), callback_data="residents")],
+        [InlineKeyboardButton("Главные события", callback_data='events')]
     ]
 residents_keyboard = [
         [InlineKeyboardButton(str(parsing.voz("btn_yrok")[0]), callback_data="rez1")],
@@ -59,10 +60,15 @@ place4_keyboard = [
             [InlineKeyboardButton(str(parsing.voz("btn_nal")[0]), callback_data="place44")],
             [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back_zone")]
         ]
-ivents_keyboard = [
-            [InlineKeyboardButton("Все события", callback_data="all_events")],
+events_keyboard=[
+            [InlineKeyboardButton("Масленица", url="https://vk.com/club204815708")],
+            [InlineKeyboardButton("Демидов Фест", url="https://vk.com/club214641997")],
+            [InlineKeyboardButton("Заговельнички", url="https://vk.com/club215953798")],
+            [InlineKeyboardButton("Веселые холмы", url="https://vk.com/funnyhills")],
             [InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back")]
         ]
+
+
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -155,13 +161,6 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             media=media,
             reply_markup=InlineKeyboardMarkup(new_keyboard))
 
-    if query.data == "ivents":
-        new_keyboard = ivents_keyboard
-        await query.edit_message_text(
-            text="События",
-            reply_markup=InlineKeyboardMarkup(new_keyboard)
-        )
-
 
     if query.data == "residents" or query.data == "back_rez":
         new_keyboard = residents_keyboard
@@ -175,13 +174,17 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup(new_keyboard)
         )
 
-    if query.data == "back_ivents":
-        new_keyboard = ivents_keyboard
-        await query.edit_message_text(
-            text="События",
+    if query.data == "events":
+        new_keyboard = events_keyboard
+        with open(zatychka, 'rb') as photo_file:
+            media = InputMediaPhoto(
+                media=photo_file,  # URL изображения или file_id
+                caption="Главные события года"  # Текст из вашего кода
+            )
+        await query.edit_message_media(
+            media=media,
             reply_markup=InlineKeyboardMarkup(new_keyboard)
         )
-
 
     if query.data == "place11":
         new_keyboard =[[InlineKeyboardButton(str(parsing.voz("btn_back")[0]), callback_data="back_zone1")]]
