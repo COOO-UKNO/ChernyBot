@@ -1,6 +1,6 @@
 import requests
 
-OAUTH_TOKEN = "y0__xCHq4_aAhjpvzcg9NHW_xI8corHuKWsoZJ8ic3vSejjVu-4LA"
+OAUTH_TOKEN = 
 FILE_PATH = "disk:/УКНО/Черноисточинск/test.xlsx"  # Проверьте путь!
 
 def download_yandex_disk_file(oauth_token, file_path):
